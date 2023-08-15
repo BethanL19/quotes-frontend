@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Preahvihear&display=swap");
+
+html {
+    background: #d3dffd;
+    font-family: "Preahvihear", sans-serif;
+    display: block;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.Quotes {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-content: center;
+    background-color: #8fb3ff;
+}
+.SingleQuote {
+    align-items: center;
+    background-color: #d3dffd;
+    border: 0;
+    border-radius: 20px;
+    justify-content: center;
+    margin: 2vh;
+    padding: 1vh;
+    text-align: left;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+}
+.QuoteButton {
+    background-color: #d41d6d;
+    color: #ffff;
+    border: 0;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    height: 4rem;
+    margin: 1vw;
+    padding: 1vh;
+    width: 16rem;
+}
+.BackButton {
+    background-color: #d41d6d;
+    color: #ffff;
+    border: 0;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    height: 4rem;
+    margin: 1vw;
+    padding: 1vh;
+    width: 16rem;
+}
+.QuoteButtons {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    justify-content: center;
+    align-content: center;
+}
+.Fav {
+    height: 4rem;
+    width: 4rem;
+    font-size: 2rem;
+    background-color: #8fb3ff;
+    border: 0;
+    border-radius: 5px;
+    margin: 1vw;
+    padding: 1vh;
+}
+/* .Quote {
+} */

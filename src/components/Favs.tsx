@@ -46,7 +46,7 @@ export function Favourites(props: FavProps): JSX.Element {
             <SingleQuote
                 quote={q.quote}
                 author={q.author}
-                in_favourites={true}
+                in_favourites={"true"}
                 favOrUnFav={() => {
                     handleUnFav(q.quote_id);
                 }}

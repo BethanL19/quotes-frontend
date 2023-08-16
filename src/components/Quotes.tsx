@@ -6,7 +6,7 @@ export interface Quote {
     id: number;
     quote: string;
     author: string;
-    in_favourites: boolean;
+    in_favourites: string;
 }
 interface QuotesProps {
     backend: string;
@@ -43,7 +43,7 @@ export function Quotes(props: QuotesProps): JSX.Element {
         addToFavs(idString);
         const quoteIndex = quotes.findIndex((quote) => quote.id === q.id);
         if (quoteIndex !== -1) {
-            const updatedQuote = { ...q, in_favourites: true };
+            const updatedQuote = { ...q, in_favourites: "true" };
             const updatedQuotes = [
                 ...quotes.slice(0, quoteIndex),
                 updatedQuote,

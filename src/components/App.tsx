@@ -22,6 +22,9 @@ function App() {
                     displayQuotesPage={handleDisplayChange}
                 />
             )}
+            <a href="https://www.forbes.com/sites/kevinkruse/2013/05/28/inspirational-quotes/?sh=4a74f3d76c7a">
+                Source
+            </a>
         </div>
     );
 }

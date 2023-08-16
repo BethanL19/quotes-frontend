@@ -11,6 +11,7 @@ interface FavQuote {
     quote_id: number;
     quote: string;
     author: string;
+    votes: number;
 }
 export function Favourites(props: FavProps): JSX.Element {
     const [favs, setFavs] = useState<FavQuote[]>([]);
@@ -29,17 +30,38 @@ export function Favourites(props: FavProps): JSX.Element {
             console.log(error);
         }
     };
+
+    const handleVote = async (id: number) => {
+        try {
+            await axios.patch(props.backend + `/favourites/vote/${id}`);
+            getFavs();
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    // show votes too but only on favs page
     const showFavs = favs.map((q) => (
-        <SingleQuote
-            quote={q.quote}
-            author={q.author}
-            in_favourites={true}
-            favOrUnFav={() => {
-                handleUnFav(q.quote_id);
-            }}
-            key={q.id}
-            id={q.id}
-        />
+        <>
+            <SingleQuote
+                quote={q.quote}
+                author={q.author}
+                in_favourites={true}
+                favOrUnFav={() => {
+                    handleUnFav(q.quote_id);
+                }}
+                key={q.id}
+                id={q.id}
+            />
+            <button
+                className="Votes"
+                onClick={() => {
+                    handleVote(q.quote_id);
+                }}
+            >
+                {q.votes}
+            </button>
+        </>
     ));
 
     const handleBackToQuotes = () => {
@@ -50,7 +72,7 @@ export function Favourites(props: FavProps): JSX.Element {
             <button className="BackButton" onClick={handleBackToQuotes}>
                 Back to Quotes
             </button>
-            <div className="Quotes">{showFavs}</div>
+            <div className="FavQuotes">{showFavs}</div>
         </>
     );
 }

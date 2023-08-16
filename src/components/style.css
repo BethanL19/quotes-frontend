@@ -70,5 +70,23 @@ html {
     margin: 1vw;
     padding: 1vh;
 }
-/* .Quote {
-} */
+.FavQuotes {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-content: center;
+    background-color: #8fb3ff;
+}
+.Votes {
+    height: 4rem;
+    width: 4rem;
+    font-size: 2rem;
+    background-color: #d41d6d;
+    border: 0;
+    border-radius: 5px;
+    margin: 5vh;
+    padding: 1vh;
+    color: #ffff;
+}

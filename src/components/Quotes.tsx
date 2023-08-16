@@ -39,11 +39,24 @@ export function Quotes(props: QuotesProps): JSX.Element {
     };
 
     // star doesn't change cause quotes don't re-render (needs to not regenerate random numbers tho to show the same quotes)
-    const handleFavSelected = (id: number) => {
-        const idString = String(id);
+    // const handleFavSelected = (id: number) => {
+    //     const idString = String(id);
+    //     addToFavs(idString);
+    // };
+    const handleFavSelected = (q: Quote) => {
+        const idString = String(q.id);
         addToFavs(idString);
+        const quoteIndex = quotes.findIndex((quote) => quote.id === q.id);
+        if (quoteIndex !== -1) {
+            const updatedQuote = { ...q, in_favourites: true };
+            const updatedQuotes = [
+                ...quotes.slice(0, quoteIndex),
+                updatedQuote,
+                ...quotes.slice(quoteIndex + 1),
+            ];
+            setQuotes(updatedQuotes);
+        }
     };
-
     const handleGoToFavs = () => {
         props.displayQuotesPage(false);
     };
@@ -70,7 +83,7 @@ export function Quotes(props: QuotesProps): JSX.Element {
                                 author={q.author}
                                 in_favourites={q.in_favourites}
                                 favOrUnFav={() => {
-                                    handleFavSelected(q.id);
+                                    handleFavSelected(q);
                                 }}
                                 key={q.id}
                                 id={q.id}

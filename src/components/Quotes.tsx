@@ -90,5 +90,3 @@ export function Quotes(props: QuotesProps): JSX.Element {
         </>
     );
 }
-
-// star on quotes page not showing as yellow if already in favs

@@ -38,11 +38,6 @@ export function Quotes(props: QuotesProps): JSX.Element {
         setShowQuotes(true);
     };
 
-    // star doesn't change cause quotes don't re-render (needs to not regenerate random numbers tho to show the same quotes)
-    // const handleFavSelected = (id: number) => {
-    //     const idString = String(id);
-    //     addToFavs(idString);
-    // };
     const handleFavSelected = (q: Quote) => {
         const idString = String(q.id);
         addToFavs(idString);
@@ -95,3 +90,5 @@ export function Quotes(props: QuotesProps): JSX.Element {
         </>
     );
 }
+
+// star on quotes page not showing as yellow if already in favs

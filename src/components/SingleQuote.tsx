@@ -11,7 +11,7 @@ export function SingleQuote(props: QuoteProps): JSX.Element {
         <li className="SingleQuote" key={props.id}>
             <label className="Quote">{`${props.quote} -- ${props.author}`}</label>
             <button className="Fav" onClick={props.favOrUnFav}>
-                {props.in_favourites === true ? "⭐️" : "☆"}
+                {props.in_favourites ? "⭐️" : "☆"}
             </button>
         </li>
     );

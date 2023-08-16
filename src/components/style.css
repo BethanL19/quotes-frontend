@@ -42,6 +42,7 @@ html {
     margin: 1vw;
     padding: 1vh;
     width: 16rem;
+    font-family: inherit;
 }
 .BackButton {
     background-color: #d41d6d;
@@ -53,6 +54,7 @@ html {
     margin: 1vw;
     padding: 1vh;
     width: 16rem;
+    font-family: inherit;
 }
 .QuoteButtons {
     display: grid;
@@ -89,4 +91,5 @@ html {
     margin: 5vh;
     padding: 1vh;
     color: #ffff;
+    font-family: inherit;
 }
